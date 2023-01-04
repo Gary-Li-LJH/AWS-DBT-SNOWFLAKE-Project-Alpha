@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: alpha_project_edw
+    schema: raw
+    tables:
+      - name: aisles
+        identifier: aisles
+
+      - name: departments
+        identifier: departments
+
+      - name: orders
+        identifier: orders
+
+      - name: products
+        identifier: products
+
+      - name: orders_product_prior
+        identifier: orders_product_prior

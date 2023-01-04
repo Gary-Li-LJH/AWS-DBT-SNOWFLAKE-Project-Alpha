@@ -1,0 +1,2 @@
+--This is a simple example of a data quality test. It checks that the dim_orders_cleaning table has no nulls in the columns that are used in the fact_orders table.
+{{ no_nulls_in_columns(ref('dim_orders_cleaning')) }}

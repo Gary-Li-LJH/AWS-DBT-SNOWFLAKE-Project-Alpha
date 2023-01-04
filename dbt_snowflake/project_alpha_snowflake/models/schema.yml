@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: src_aisles
+    description: Source table which contains aisle informtion.
+    columns:
+
+      - name: aisle_id
+        description: Primary key for the aisle
+        tests:
+          - unique
+          - not_null
+
+  - name: src_departments
+    description: Source table which contains department infomation.
+    columns:
+
+      - name: department_id
+        description: Primary key for the department
+        tests:
+          - unique
+          - not_null
+
+  - name: src_products
+    description: Source table which contains product infomation.
+    columns:
+
+      - name: product_id
+        description: Primary key for the product
+        tests:
+          - unique
+          - not_null
+
+      - name: aisle_id
+        description: Foreign key for the product table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('src_aisles')
+              field: aisle_id
+
+      - name: department_id
+        description: Foreien key for the product table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('src_departments')
+              field: department_id
+      
+  - name: src_orders
+    description: '{{ doc("src_orders_description") }}'
